@@ -36,4 +36,4 @@ export const Navbar: FC = observer(() => {
       </Toolbar>
     </AppBar>
   );
-});
+})
