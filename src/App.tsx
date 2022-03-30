@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, ReactElement, useEffect } from 'react';
 
-function App() {
+import 'App.scss';
+import { LinearProgress } from '@mui/material';
+import { observer } from 'mobx-react';
+import { Route, Routes } from 'react-router-dom';
+
+import { Navbar } from 'components/Navbar';
+import { dashboard, login } from 'endpoints';
+import { Login } from 'pages/Login';
+import { PersonsPage } from 'pages/PersonsPage';
+import { PrivateRoute } from 'PrevateRoute';
+import { authStore } from 'store/authStore';
+
+export const App: FC = observer((): ReactElement => {
+  const { updateIsAuth, isAuth, status } = authStore;
+  useEffect(() => {
+    updateIsAuth();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      {status === 'loading' && <LinearProgress />}
+      <Routes>
+        <Route path={login} element={<Login />} />
+        <Route
+          path={dashboard}
+          element={
+            <PrivateRoute isAuth={isAuth}>
+              <PersonsPage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
     </div>
   );
-}
-
-export default App;
+});

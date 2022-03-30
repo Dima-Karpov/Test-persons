@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "login": "test-account_1",
+      "password": "test-account_1"
+    }
+  ],
+  "persons": [
+    {
+      "id": "1",
+      "personList": [
+        {
+          "id": "6449bf24-b78b-4b5e-9ac9-0e227f9e59fa",
+          "name": "Dimych",
+          "number": "+375296564112",
+          "url": "https://media.istockphoto.com/vectors/faces-avatars-icons-user-avatar-customer-service-icon-business-avatar-vector-id1126551708"
+        },
+        {
+          "id": "8051a1a2-3c4g-2132-10r23-u03rsdd854c8",
+          "name": "Gleb",
+          "number": "+375448596541",
+          "url": "https://thumbs.dreamstime.com/b/profile-image-avatar-picture-businessman-manager-vector-illustration-flat-style-isolated-103043631.jpg"
+        },
+        {
+          "id": "196a923e-7b23-4ca9-9228-f1eb2b869bd9",
+          "name": "Lera",
+          "number": "+375258475236",
+          "url": "https://thumbs.dreamstime.com/b/profile-image-avatar-picture-businesswoman-cute-girl-vector-illustration-flat-style-isolated-102818317.jpg"
+        },
+        {
+          "id": "49dc2b5c-d501-4230-8be9-af85d350a886",
+          "name": "Max",
+          "number": "+375298745412",
+          "url": "https://cdn5.vectorstock.com/i/1000x1000/75/09/smiling-avatar-boy-graphic-vector-9437509.jpg"
+        }
+      ]
+    }
+  ]
+}
